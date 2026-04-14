@@ -2,6 +2,7 @@
   <dictionary name="project">
     <words>
       <w>Scryfall</w>
+      <w>setcode</w>
     </words>
   </dictionary>
 </component>
