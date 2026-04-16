@@ -40,9 +40,7 @@ public class Main {
                     }
                 };
             }).then();
-            return commandRegistration
-                    .then(loginRegister)
-                    .then(commands);
+            return Mono.when(commandRegistration, loginRegister, commands);
         });
         login.block();
     }

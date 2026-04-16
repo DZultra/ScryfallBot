@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'net.dzultra'
@@ -11,15 +10,24 @@ repositories {
 }
 
 jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     manifest {
         attributes(
-                'Main-Class': 'net.dzultra.MTGDiscordBot.Main'
+                'Main-Class': 'net.dzultra.Bot.Main'
         )
+    }
+
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
     }
 }
 
 dependencies {
     implementation("net.dzultra:JavaScryfallAPI:1.0.1")
     implementation('com.discord4j:discord4j-core:3.3.2')
+    runtimeOnly("org.slf4j:slf4j-simple:2.0.17")
     compileOnly('org.jetbrains:annotations:24.0.1')
 }
