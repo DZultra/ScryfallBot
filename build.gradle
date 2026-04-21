@@ -26,7 +26,7 @@ jar {
 }
 
 dependencies {
-    implementation("net.dzultra:JavaScryfallAPI:1.0.1")
+    implementation("net.dzultra:JavaScryfallAPI:1.0.2")
     implementation('com.discord4j:discord4j-core:3.3.2')
     runtimeOnly("org.slf4j:slf4j-simple:2.0.17")
     compileOnly('org.jetbrains:annotations:24.0.1')
